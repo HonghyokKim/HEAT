@@ -1,6 +1,8 @@
 # An R package, HEAT (Heatwave effect Estimation via Adjustment for Temperature)
 
-This R package allows researchers to use the novel method to estimate the effect of heatwaves on a health outcome, proposed by Dr. Honghyok Kim (University of Illinois at Chicago). The following paper is available on arXiv.org and has been submitted to a scientific journal for publication:
+This R package allows researchers to use the novel method to estimate the effect of heatwaves on a health outcome, proposed by Dr. Honghyok Kim (University of Illinois at Chicago) in the following paper. Each function embeded in this package has a description file. Use "?functionname" in an R environment for detail.
+
+The pre-print is available on arXiv.org. The paper has been submitted to a scientific journal for publication:
 
 
 **"On adjustment for temperature in heatwave epidemiology: a new method and toward clarification of methods to estimate health effects of heatwaves"** by
@@ -10,9 +12,6 @@ Honghyok Kim 1, Michelle L. Bell 2
 1.Division of Environmental and Occupational Health Sciences, School of Public Health, University of Illinois Chicago, Chicago, Illinois, USA
 
 2.School of the Environment, Yale University, New Haven, CT, USA
-
-
-Each function embeded in this package has a description file. Use "?functionname" in R for detail.
 
 
 **Validation**
