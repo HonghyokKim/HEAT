@@ -16,6 +16,6 @@ Honghyok Kim 1, Michelle L. Bell 2
 
 **Validation**
 
--This package was validated for the replication of the results in the paper: daily time-series dataset for Seoul, South Korea (2006-2013). An R code and data set for replication is provided here.
+-This package has been validated for replicating the results presented in the paper. An R code and data set for replication is provided here: daily time-series dataset for Seoul, South Korea (2006-2013). Potential investigators can learn this package with them and are welcome to follow the methods presented in the paper.
 
--This package is under additional validation for heatwave definitions that were not analyzed for the paper and adjustment for temperature with a longer lag period than the one used in the data analysis of the paper. Potential investigators are welcome to follow the methodology of the paper. If they are interested in other definitions and adjustment for temperature with a longer lag period, please reach out to Dr. Kim (honghyok@uic.edu) and make sure variables generated appropriate.
+-This package is undergoing additional validation for heatwave definitions that were not analyzed in the original paper and for adjustment for temperature with a longer lag period than the one used in the paper. In case potential investigators want to use other heatwave definitions and lag periods for the adjustment, please reach out to Dr. Kim (honghyok@uic.edu) and make sure variables generated appropriate for their purposes.
