@@ -5,13 +5,14 @@
 #' @param vari the name of temperature variable to be used in the dataset (e.g., t_mean; not "t_mean").
 #' @param HWvari the name of the binary variable to indicate the presence of a heatwave (e.g., HW; not "HW")
 #' @param maxlag the maximum lag period to adjust for temperature
+#' @param cutoff the value to distinguish low temperatures and high temperatures, like optimal temperature. Default is NULL. Only to be used if piecewise=FALSE
 #' @param adj if=1 (default), variables for adjustment for temperature including lag effects of heatwaves. if=2, variables for adjustment for temperature excluding lag effects of heatwaves.
 #' @param piecewise if TRUE (default), piecewise temperature variables for adjustment; if FALSE, non-piecewise temperature variables for adjustment
 #' @export
 #' @examples
 #' createADJforHT(data=newdata,vari=t_mean,HWvari=HW,maxlag=2,adj=1)
 
-createADJforHT<-function(data,vari,HWvari,maxlag,adj=1,piecewise=TRUE) {
+createADJforHT<-function(data,vari,HWvari,maxlag,cutoff=NULL,adj=1,piecewise=TRUE) {
   vari<-deparse(substitute(vari))
   HWvari<-deparse(substitute(HWvari))
   
@@ -55,6 +56,48 @@ createADJforHT<-function(data,vari,HWvari,maxlag,adj=1,piecewise=TRUE) {
     }
     return(result_ADJ1)
   }
+  }
+
+  if(piecewise==FALSE) {
+    if(adj==2) {
+      result_ADJ2<-data.frame(ADJ2_lag.0=ifelse(data[,HWvari]==1,0,data[,paste0(vari)]-cutoff))
+      
+      if(maxlag==1){
+        result_ADJ2$ADJ2_lag.1<-tsModel::Lag(result_ADJ2$ADJ2_lag.0,k=1)
+      }
+      if(maxlag>=2){
+        result_ADJ2<-data.frame(ADJ2_lag.0=ifelse(data[,HWvari]==1,0,data[,paste0(vari)]-cutoff),
+                                ADJ2_lag=tsModel::Lag(result_ADJ2$ADJ2_lag.0,k=c(1:maxlag)))
+      }
+      return(result_ADJ2)
+    }
+    
+    if(adj==1) {
+      result_ADJ1<-data.frame(ADJ1_lag.0=ifelse(data[,HWvari]==1,0,data[,paste0(vari)]-cutoff))
+      
+      if(maxlag>=1) {
+        result_ADJ1$ADJ1_lag.1<-ifelse(data[,HWvari]==1,0,data[,paste0(vari,"_lag_1")]-cutoff)
+      }
+      if(maxlag>=2) {
+        result_ADJ1$ADJ1_lag.2<-ifelse(data[,HWvari]==1,0,data[,paste0(vari,"_lag_2")]-cutoff)
+      }
+      if(maxlag>=3) {
+        result_ADJ1$ADJ1_lag.3<-ifelse(data[,HWvari]==1,0,data[,paste0(vari,"_lag_3")]-cutoff)
+      }
+      if(maxlag>=4) {
+        result_ADJ1$ADJ1_lag.4<-ifelse(data[,HWvari]==1,0,data[,paste0(vari,"_lag_4")]-cutoff)
+      }
+      if(maxlag>=5) {
+        result_ADJ1$ADJ1_lag.5<-ifelse(data[,HWvari]==1,0,data[,paste0(vari,"_lag_5")]-cutoff)
+      }
+      if(maxlag>=6) {
+        result_ADJ1$ADJ1_lag.6<-ifelse(data[,HWvari]==1,0,data[,paste0(vari,"_lag_6")]-cutoff)
+      }
+      if(maxlag>=7) {
+        result_ADJ1$ADJ1_lag.7<-ifelse(data[,HWvari]==1,0,data[,paste0(vari,"_lag_7")]-cutoff)
+      }
+      return(result_ADJ1)
+    }
   }
 }
 
