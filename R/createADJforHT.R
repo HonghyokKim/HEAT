@@ -76,25 +76,25 @@ createADJforHT<-function(data,vari,HWvari,maxlag,cutoff=NULL,adj=1,piecewise=TRU
       result_ADJ1<-data.frame(ADJ1_lag.0=ifelse(data[,HWvari]==1,0,data[,paste0(vari)]-cutoff))
       
       if(maxlag>=1) {
-        result_ADJ1$ADJ1_lag.1<-ifelse(data[,HWvari]==1,0,data[,paste0(vari,"_lag_1")]-cutoff)
+        result_ADJ1$ADJ1_lag.1<-ifelse(data[,HWvari]==1,0,data[,paste0(vari,"_lag")][,1]-cutoff)
       }
       if(maxlag>=2) {
-        result_ADJ1$ADJ1_lag.2<-ifelse(data[,HWvari]==1,0,data[,paste0(vari,"_lag_2")]-cutoff)
+        result_ADJ1$ADJ1_lag.2<-ifelse(data[,HWvari]==1,0,data[,paste0(vari,"_lag")][,2]-cutoff)
       }
       if(maxlag>=3) {
-        result_ADJ1$ADJ1_lag.3<-ifelse(data[,HWvari]==1,0,data[,paste0(vari,"_lag_3")]-cutoff)
+        result_ADJ1$ADJ1_lag.3<-ifelse(data[,HWvari]==1,0,data[,paste0(vari,"_lag")][,3]-cutoff)
       }
       if(maxlag>=4) {
-        result_ADJ1$ADJ1_lag.4<-ifelse(data[,HWvari]==1,0,data[,paste0(vari,"_lag_4")]-cutoff)
+        result_ADJ1$ADJ1_lag.4<-ifelse(data[,HWvari]==1,0,data[,paste0(vari,"_lag")][,4]-cutoff)
       }
       if(maxlag>=5) {
-        result_ADJ1$ADJ1_lag.5<-ifelse(data[,HWvari]==1,0,data[,paste0(vari,"_lag_5")]-cutoff)
+        result_ADJ1$ADJ1_lag.5<-ifelse(data[,HWvari]==1,0,data[,paste0(vari,"_lag")][,5]-cutoff)
       }
       if(maxlag>=6) {
-        result_ADJ1$ADJ1_lag.6<-ifelse(data[,HWvari]==1,0,data[,paste0(vari,"_lag_6")]-cutoff)
+        result_ADJ1$ADJ1_lag.6<-ifelse(data[,HWvari]==1,0,data[,paste0(vari,"_lag")][,6]-cutoff)
       }
       if(maxlag>=7) {
-        result_ADJ1$ADJ1_lag.7<-ifelse(data[,HWvari]==1,0,data[,paste0(vari,"_lag_7")]-cutoff)
+        result_ADJ1$ADJ1_lag.7<-ifelse(data[,HWvari]==1,0,data[,paste0(vari,"_lag")][,7]-cutoff)
       }
       return(result_ADJ1)
     }
