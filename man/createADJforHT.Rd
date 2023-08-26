@@ -15,6 +15,8 @@ createADJforHT(data, vari, HWvari, maxlag, adj = 1, piecewise = TRUE)
 
 \item{maxlag}{the maximum lag period to adjust for temperature}
 
+\item{cutoff}{the value to distinguish low temperatures and high temperatures, like optimal temperature. Default is NULL. Only to be used if piecewise=FALSE}
+
 \item{adj}{if=1 (default), variables for adjustment for temperature including lag effects of heatwaves. if=2, variables for adjustment for temperature excluding lag effects of heatwaves.}
 
 \item{piecewise}{if TRUE (default), piecewise temperature variables for adjustment; if FALSE, non-piecewise temperature variables for adjustment}
