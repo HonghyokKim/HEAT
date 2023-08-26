@@ -1,5 +1,9 @@
 # An R package, HEAT (Heatwave effect Estimation via Adjustment for Temperature)
 
+Last Update: Aug 25, 2023
+We have corrected an error that arose when the function "createADJforHT" was used to create non-piecewise temperature variables (piecewise=FALSE).
+
+
 This R package allows researchers to use the novel method to estimate the effect of heatwaves on a health outcome, proposed by Dr. Honghyok Kim (University of Illinois at Chicago) in the following paper. Each function embeded in this package has a description file. Use "?functionname" in an R environment for detail.
 
 The pre-print is available on arXiv.org. The paper has been submitted to a scientific journal for peer-reviewed publication:
