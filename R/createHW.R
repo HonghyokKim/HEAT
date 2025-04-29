@@ -12,7 +12,7 @@
 createHW<-function(data,vari,hw_th,hw_dr) {
   vari<-deparse(substitute(vari))
   if(hw_dr==1) {
-    HW<- ifelse(data_seoul$t_mean>hw_th,1,0)
+    HW<- ifelse(data[,vari]>hw_th,1,0)
   }
   
   if(hw_dr==2) {
