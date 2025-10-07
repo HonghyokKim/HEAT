@@ -102,7 +102,7 @@ TAMethod<-matrix(NA,nrow=nsim,ncol=6)
 set.seed(123)
 
 for (ii in seq(nsim)) {
-  Y_exp<-rpois(length(predict(gen.model,type="response")),lambda=predict(gen.model.2,type="response"))
+  Y_exp<-rpois(length(predict(gen.model,type="response")),lambda=predict(gen.model,type="response"))
   sim.dat$Y<-Y_exp
   
   
