@@ -21,6 +21,6 @@ Honghyok Kim 1, Michelle L. Bell 2
 
 **Validation**
 
--This package has been validated for replicating the results presented in the paper. An R code and data set for replication is provided here: daily time-series dataset for Seoul, South Korea (2006-2013). Potential investigators can learn this package with them and are welcome to follow the methods presented in the paper.
+-This package has been validated for replicating the results presented in the paper.  R code and the data set for replication is provided here: daily time-series dataset for Seoul, South Korea (2006-2013). R code for the simulation analysis is also provided. I hope they are helpful for you to learn this package.
 
 -This package includes heatwave definitions that were not analyzed in the original paper. In case potential investigators want to use other heatwave definitions, we highly encourage you to understand how this method works first. Please make sure if variables generated are appropriate for their purposes. If you have any questions, please email me at honghyok@uic.edu. 
