@@ -1,5 +1,8 @@
 # An R package, HEAT (Heatwave effect Estimation via Adjustment for Temperature)
 
+Update: Oct 6, 2025
+R code for the simulation analysis has been posted. 
+
 Update: Aug 25, 2023
 
 We have corrected an error that arose when the function "createADJforHT" was used to create non-piecewise temperature variables (piecewise=FALSE).
